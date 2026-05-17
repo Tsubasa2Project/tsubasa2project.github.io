@@ -3,60 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tsubasa 2 Project - Guide e Tutorial</title>
+    <title>Tsubasa 2 Project | Guide, Build e Tutorial</title>
     <style>
+        :root {
+            --bg-color: #080c14;
+            --panel-color: #111827;
+            --accent-blue: #0066ff;
+            --accent-cyan: #00f0ff;
+            --accent-pink: #ff0055;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+        }
+
         body {
-            background-color: #0b0f19;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            text-align: center;
         }
-        header {
-            background: linear-gradient(180deg, #141d30 0%, #0b0f19 100%);
-            padding: 50px 20px;
-            border-bottom: 3px solid #0055ff;
+
+        /* Barra di Navigazione */
+        nav {
+            background-color: rgba(17, 24, 39, 0.95);
+            border-bottom: 2px solid var(--accent-blue);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h1 {
-            color: #00d2ff;
-            font-size: 2.5em;
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
             margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            padding: 0;
+            display: flex;
+            gap: 20px;
         }
-        p {
-            color: #a0aec0;
-            font-size: 1.2em;
+
+        nav ul li a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s;
         }
-        .container {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
+
+        nav ul li a:hover {
+            color: var(--accent-cyan);
         }
+
+        /* Hero Section (Copertina) */
+        header {
+            background: linear-gradient(180deg, #111827 0%, #080c14 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1e293b;
+        }
+
         .badge {
-            background-color: #ff0055;
+            background-color: var(--accent-pink);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 16px;
             border-radius: 20px;
             font-weight: bold;
+            font-size: 0.8em;
             display: inline-block;
             margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ffffff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-yt {
+            background-color: #ff0000;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn-yt:hover {
+            background-color: #cc0000;
+        }
+
+        /* Griglia Contenuti Principali */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--panel-color);
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+
+        .card h3 {
+            color: var(--accent-cyan);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .card .btn-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .card .btn-link:hover {
+            text-decoration: underline;
+            color: var(--accent-cyan);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            border-top: 1px solid #1e293b;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
+    <!-- NAV BAR -->
+    <nav>
+        <div class="logo">TSUBASA 2 PROJECT</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Personaggi</a></li>
+            <li><a href="#">Guide & Tutorial</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
     <header>
-        <div class="badge">WORK IN PROGRESS</div>
-        <h1>Tsubasa 2 Project</h1>
-        <p>Il punto di riferimento italiano per Captain Tsubasa 2: World Fighters</p>
+        <div class="badge">ROAD TO WORLD FIGHTERS</div>
+        <h1>Captain Tsubasa 2</h1>
+        <p>Il tracking center italiano dedicato a guide tattiche, build dei personaggi e segreti del nuovo capitolo targato Bandai Namco.</p>
+        <a href="#" class="btn-yt" target="_blank">Guarda i Video su YouTube</a>
     </header>
 
-    <div class="container">
-        <h2>Sito in Costruzione</h2>
-        <p>Stiamo preparando il database dei personaggi, i tutorial tattici e le guide complete alle mosse speciali. Resta sintonizzato!</p>
+    <!-- HUB SECTIONS -->
+    <div class="main-container">
+        <div class="grid">
+            
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Database Personaggi</h3>
+                <p>Analisi statistiche, tier list aggiornate e le migliori build per ottimizzare i calciatori della tua squadra. Scopri come sbloccare ogni potenziale.</p>
+                <a href="#" class="btn-link">Esplora Database &rarr;</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>Guide & Tutorial</h3>
+                <p>Non sai come eseguire una super parata o un tiro combinato? Qui troverai guide testuali dettagliate passo-passo che integrano i video del canale.</p>
+                <a href="#" class="btn-link">Leggi le Guide &rarr;</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>News & Patch Notes</h3>
+                <p>Resta aggiornato su tutti i trailer ufficiali, i leak dal Giappone, gli aggiornamenti di gioco e i bilanciamenti del gameplay in tempo reale.</p>
+                <a href="#" class="btn-link">Leggi le News &rarr;</a>
+            </div>
+
+        </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 TSUBASA 2 PROJECT. Sito creato per la community. Tutti i diritti dei materiali ufficiali appartengono a Bandai Namco / Yoichi Takahashi.</p>
+    </footer>
 
 </body>
 </html>
